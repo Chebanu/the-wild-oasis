@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
-import { updateSetting } from "../../services/apiSettings";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
-import { useSettings } from "./useSettings";
 import Spinner from "../../ui/Spinner";
+import { useSettings } from "./useSettings";
 import { useUpdateSetting } from "./useUpdateSetting";
 
 function UpdateSettingsForm() {
@@ -13,11 +11,11 @@ function UpdateSettingsForm() {
     settings: {
       minBookingLength,
       maxBookingLength,
-      maxGuestLength,
+      maxGuestsPerBooking,
       breakfastPrice,
     } = {},
   } = useSettings();
-  const { isUpdating, updateSettings } = useUpdateSetting();
+  const { isUpdating, updateSetting } = useUpdateSetting();
 
   if (isLoading) return <Spinner />;
 
@@ -25,7 +23,6 @@ function UpdateSettingsForm() {
     const { value } = e.target;
 
     if (!value) return;
-
     updateSetting({ [field]: value });
   }
 
@@ -55,9 +52,9 @@ function UpdateSettingsForm() {
         <Input
           type="number"
           id="max-guests"
-          defaultValue={maxGuestLength}
+          defaultValue={maxGuestsPerBooking}
           disabled={isUpdating}
-          onBlur={(e) => handleUpdate(e, "maxGuestLength")}
+          onBlur={(e) => handleUpdate(e, "maxGuestsPerBooking")}
         />
       </FormRow>
 

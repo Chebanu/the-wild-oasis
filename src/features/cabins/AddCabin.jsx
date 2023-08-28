@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import Button from "../../ui/Button";
-import Modal from "../../ui/Modal";
 import CreateCabinForm from "./CreateCabinForm";
+import Modal from "../../ui/Modal";
 
 function AddCabin() {
   return (
@@ -19,14 +18,14 @@ function AddCabin() {
 }
 
 // function AddCabin() {
-//   const [IsOpenModal, setIsOpenModal] = useState(false);
+//   const [isOpenModal, setIsOpenModal] = useState(false);
 
 //   return (
 //     <div>
 //       <Button onClick={() => setIsOpenModal((show) => !show)}>
 //         Add new cabin
 //       </Button>
-//       {IsOpenModal && (
+//       {isOpenModal && (
 //         <Modal onClose={() => setIsOpenModal(false)}>
 //           <CreateCabinForm onCloseModal={() => setIsOpenModal(false)} />
 //         </Modal>
